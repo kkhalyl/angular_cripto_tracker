@@ -5,6 +5,7 @@ import { InvestmentListComponent } from './components/investment-list/investment
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [CommonModule, RouterOutlet, InvestmentListComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'

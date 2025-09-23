@@ -6,14 +6,14 @@
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 
+
+
 html {
+  color-scheme: light dark;
   @include mat.theme((
-    color: (
-      primary: mat.$blue-palette,
-      tertiary: mat.$violet-palette,
-    ),
+    color: mat.$blue-palette,
     typography: Roboto,
-    density: 0,
+    density: 0
   ));
 }
 
