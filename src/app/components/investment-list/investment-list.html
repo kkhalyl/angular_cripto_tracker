@@ -1,0 +1,13 @@
+<h3>Meus Investimentos</h3>
+
+<div *ngFor="let inv of investments" class="investment-card">
+  
+  <h4>{{ inv.quantity }} {{ inv.cryptoSymbol }}</h4>
+  <p>Comprado a: R$ {{ inv.purchasePrice | number:'1.2-2' }}</p>
+
+  <p>Preço Atual: R$ {{ inv.currentPrice | number:'1.2-2' }}</p>
+
+  <p *ngIf="inv.profitOrLoss" [ngClass]="{'profit': inv.profitOrLoss >= 0, 'loss': inv.profitOrLoss < 0}">
+    P/L: {{ inv.profitOrLoss | number:'1.2-2' }}%
+  </p>
+  </div>
