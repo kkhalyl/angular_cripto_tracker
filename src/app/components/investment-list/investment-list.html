@@ -1,13 +1,25 @@
-<h3>Meus Investimentos</h3>
-
-<div *ngFor="let inv of investments" class="investment-card">
+<mat-card *ngFor="let inv of investments" class="investment-card">
   
-  <h4>{{ inv.quantity }} {{ inv.cryptoSymbol }}</h4>
-  <p>Comprado a: R$ {{ inv.purchasePrice | number:'1.2-2' }}</p>
+  <mat-card-title>{{ inv.quantity }} {{ inv.cryptoSymbol }}</mat-card-title>
+  <mat-card-subtitle>{{ inv.cryptoId | titlecase }}</mat-card-subtitle>
+  
+  <mat-divider></mat-divider>
+  
+  <mat-list>
+    <mat-list-item>
+      <span class="label">Purchased at:</span>
+      <span>R$ {{ inv.purchasePrice | number:'1.2-2' }}</span>
+    </mat-list-item>
+    
+    <mat-list-item *ngIf="inv.currentPrice !== undefined">
+      <span class="label">Current Price:</span>
+      <span>R$ {{ inv.currentPrice | number:'1.2-2' }}</span>
+    </mat-list-item>
+    
+    <mat-list-item *ngIf="inv.profitOrLoss !== undefined" [ngClass]="{'profit': inv.profitOrLoss >= 0, 'loss': inv.profitOrLoss < 0}">
+      <span class="label">P/L:</span>
+      <span>{{ inv.profitOrLoss | number:'1.2-2' }}%</span>
+    </mat-list-item>
+  </mat-list>
 
-  <p>Preço Atual: R$ {{ inv.currentPrice | number:'1.2-2' }}</p>
-
-  <p *ngIf="inv.profitOrLoss" [ngClass]="{'profit': inv.profitOrLoss >= 0, 'loss': inv.profitOrLoss < 0}">
-    P/L: {{ inv.profitOrLoss | number:'1.2-2' }}%
-  </p>
-  </div>
+</mat-card>

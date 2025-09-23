@@ -3,12 +3,14 @@ import { Investment } from '/workspaces/angular_cripto_tracker/src/app/models/in
 import { InvestmentService } from '/workspaces/angular_cripto_tracker/src/app/services/investment.services';
 import { CommonModule } from '@angular/common';
 import { CryptoService } from '/workspaces/angular_cripto_tracker/src/app/services/crypto';
-
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatDivider } from '@angular/material/list';
 
 @Component({
   selector: 'app-investment-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatCardModule, MatListModule, MatDivider],
   templateUrl: './investment-list.html',
   styleUrl: './investment-list.css'
 })
