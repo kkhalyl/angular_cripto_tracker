@@ -3,6 +3,7 @@ import { Investment } from '/workspaces/angular_cripto_tracker/src/app/models/in
 import { InvestmentService } from '/workspaces/angular_cripto_tracker/src/app/services/investment.services';
 import { CryptoService } from '/workspaces/angular_cripto_tracker/src/app/services/crypto';
 import { CommonModule } from '@angular/common';
+import { MatToolbar } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
@@ -13,7 +14,7 @@ import { EMPTY } from 'rxjs';
 @Component({
   selector: 'app-investment-list',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatListModule, MatDividerModule, MatProgressSpinnerModule],
+  imports: [CommonModule, MatCardModule, MatListModule, MatDividerModule, MatProgressSpinnerModule, MatToolbar],
   templateUrl: './investment-list.html',
   styleUrl: './investment-list.css'
 })

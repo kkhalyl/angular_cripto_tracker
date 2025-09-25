@@ -1,0 +1,52 @@
+@use 'sass:map'; 
+@use '@angular/material' as mat;
+@use './_theme-colors' as theme; // Path to your generated theme
+@include mat.core();
+
+html {
+  color-scheme: dark;
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+body {
+  color-scheme: light dark;
+  color: map.get(theme.$primary-palette, 100); // default text for body
+  font: var(--mat-sys-body-medium);
+}
+
+// Investment card
+mat-card.investment-card {
+  background-color: map.get(theme.$primary-palette, 40);
+  color: map.get(theme.$primary-palette, 100);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  padding: 16px;
+}
+
+// Error card
+mat-card.error-card {
+  background-color: map.get(map.get(theme.$primary-palette, error), 25);
+  color: map.get(theme.$primary-palette, 100);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  padding: 16px;
+}
+
+// Optional: dividers and list items inside cards
+mat-card .mat-divider {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+mat-card mat-list-item {
+  color: inherit;
+}
+
+mat-card mat-list-item.profit {
+  color: #4caf50;
+}
+
+mat-card mat-list-item.loss {
+  color: #f44336;
+}
