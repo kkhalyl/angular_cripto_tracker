@@ -16,7 +16,7 @@ import { EMPTY } from 'rxjs';
   standalone: true,
   imports: [CommonModule, MatCardModule, MatListModule, MatDividerModule, MatProgressSpinnerModule, MatToolbar],
   templateUrl: './investment-list.html',
-  styleUrl: './investment-list.css'
+  styleUrl: './investment-list.scss'
 })
 export class InvestmentListComponent implements OnInit {
 

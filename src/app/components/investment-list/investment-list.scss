@@ -1,0 +1,21 @@
+@use 'sass:map'; 
+@use '@angular/material' as mat;
+@use '/workspaces/angular_cripto_tracker/src/_theme-colors.scss' as theme; 
+@include mat.core();
+
+.logo {
+  height: 200px;
+  position: flex;
+  margin-left: -50px;
+  margin-top: 10px;
+}
+
+mat-toolbar {
+  background-color: map.get(theme.$primary-palette, 80);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  height: 100px;
+  width: 320px;
+}

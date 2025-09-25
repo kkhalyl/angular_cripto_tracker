@@ -16,6 +16,7 @@ body {
   font: var(--mat-sys-body-medium);
 }
 
+
 // Investment card
 mat-card.investment-card {
   background-color: map.get(theme.$primary-palette, 40);
