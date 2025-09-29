@@ -11,28 +11,25 @@ html {
 }
 
 body {
+  margin: 0;
+  padding-bottom: 50%;
   color-scheme: light dark;
-  color: map.get(theme.$primary-palette, 100); // default text for body
+  color: map.get(theme.$primary-palette, 100);
   font: var(--mat-sys-body-medium);
 }
 
 
-// Investment card
 mat-card.investment-card {
   background-color: map.get(theme.$primary-palette, 40);
   color: map.get(theme.$primary-palette, 100);
-  border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  padding: 16px;
 }
 
 // Error card
 mat-card.error-card {
   background-color: map.get(map.get(theme.$primary-palette, error), 25);
   color: map.get(theme.$primary-palette, 100);
-  border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  padding: 16px;
 }
 
 // Optional: dividers and list items inside cards

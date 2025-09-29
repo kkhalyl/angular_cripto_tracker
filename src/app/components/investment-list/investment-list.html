@@ -3,7 +3,47 @@
     <img src="assets/logo.png" alt="Logo" class="logo" />
   </div>
   <div class="toolbar-right">
-    <button mat-raised-button class="login" routerLink="/login">Login</button>
-    <img src="assets/login.png" alt="user" class="user-icon" />
+    <span class="login">Login</span>
+    <a routerLink="/login">
+      <img src="assets/login.png" alt="user" class="user-icon" />
+    </a>
+    <router-outlet />
   </div>
 </mat-toolbar>
+<div class="steps">
+  <div class="step-card">
+    <mat-card-content class="step">
+      <div class="stepCircle">1</div><span>Escolha sua Criptomoeda</span>
+    </mat-card-content>
+    <div class="divider"></div>
+    <mat-card-content class="step">
+      <div class="stepCircle">2</div><span>Valor da Compra</span>
+    </mat-card-content>
+    <div class="divider"></div>
+    <mat-card-content class="step">
+      <div class="stepCircle">3</div><span>Data da Transição</span>
+    </mat-card-content>
+    <div class="divider"></div>
+    <mat-card-content class="step">
+      <div class="stepCircle">4</div><span>Resultados</span>
+    </mat-card-content>
+  </div>
+</div>
+<mat-card class="select-coin">
+  <mat-card-content>
+    <mat-card-title>Selecione a Criptomoeda</mat-card-title>
+    <mat-card *ngFor="let inv of investments" class="coin-card">
+      <mat-card-content class="coin-header">
+        <img src="assets/bitcoin.png" alt="Bitcoin" class="coin-icon" />
+        <div class="coin-info">
+          <p class="coin-name">{{ inv.cryptoId }}</p>
+          <p class="coin-symbol">{{ inv.cryptoSymbol }}</p>
+        </div>
+      </mat-card-content>
+      <div class="value">
+          <p>R$ {{ inv.currentPrice | number:'1.2-2' }}</p>
+          <p class="percentage">+5,00%</p>
+      </div>
+    </mat-card>
+  </mat-card-content>
+</mat-card>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterOutlet, RouterLink } from '@angular/router';
 import { Investment } from '/workspaces/angular_cripto_tracker/src/app/models/investment';
 import { InvestmentService } from '/workspaces/angular_cripto_tracker/src/app/services/investment.services';
 import { CryptoService } from '/workspaces/angular_cripto_tracker/src/app/services/crypto';
@@ -7,15 +8,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbar } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; // Import spinner module
 import { catchError, finalize } from 'rxjs/operators'; // Import RxJS operators
 import { EMPTY } from 'rxjs';
 
+
 @Component({
   selector: 'app-investment-list',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatCardModule, MatListModule, MatDividerModule, MatProgressSpinnerModule, MatToolbar],
+  imports: [CommonModule, MatButtonModule, MatIconModule, MatCardModule, MatInputModule, MatListModule, MatDividerModule, MatProgressSpinnerModule, MatToolbar, RouterLink, RouterOutlet],
   templateUrl: './investment-list.html',
   styleUrl: './investment-list.scss'
 })
