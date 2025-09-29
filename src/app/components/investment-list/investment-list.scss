@@ -61,6 +61,7 @@ mat-toolbar {
   color: map.get(theme.$primary-palette, 80);
   display:flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
 }
 
@@ -85,8 +86,6 @@ mat-toolbar {
 .select-coin{
   background-color: map.get(theme.$secondary-palette, 10);
   display: flex;
-  align-items: center;
-  justify-content: center;
   margin-left: 20%;
   margin-right: 20%;
   border-radius: 20px;
@@ -103,8 +102,20 @@ mat-toolbar {
   margin-bottom: 20px;
 }
 
-.coin-icon{
+.coin-iconB{
   height: 70px;
+}
+
+.coin-iconE, .coin-iconS{
+  height: 50px;
+  margin: 5%;
+}
+
+.coin-bar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
 }
 
 .coin-card{
