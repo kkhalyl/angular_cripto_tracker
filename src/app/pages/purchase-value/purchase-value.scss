@@ -3,7 +3,6 @@
 @use '/workspaces/angular_cripto_tracker/src/_theme-colors.scss' as theme; 
 @include mat.core();
 
-
 mat-card-content{
   padding-top:0px !important;
   padding-bottom:0px !important;
@@ -47,9 +46,11 @@ mat-card-content{
   background-color: #555;
 }
 
-.select-coin{
+.purchase-value{
   background-color: map.get(theme.$secondary-palette, 10);
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 1% 10% 5% 10%;
   border-radius: 20px;
   max-width: 900px;
@@ -57,7 +58,7 @@ mat-card-content{
   margin: 0 auto;
 }
 
-.select-coin mat-card-title {
+.purchase-value mat-card-title {
   text-align: center;
   font-style: bold;
   font-size: 40px;
@@ -65,75 +66,40 @@ mat-card-content{
   font-weight: 500;
   width: 100%;
   margin: 5%;
+  min-width: 700px;
 }
 
-.coin-icon{
-  width: 50px;
-  height: auto;
-  object-fit: cover;
-  padding: 5%;
+.value-input {
+  text-align: left;
+  font-style: normal;
+  font-size: 15px;
+  color: map.get(theme.$primary-palette, 80);
+  font-weight: 0;
+  width: 100%;
+  margin: 5%;
+  min-width: 700px;
 }
 
-.coin-bar{
+.value-label {
+  margin-bottom: 2px;
+}
+
+.custom-form-field {
+  min-width: 700px;
+  min-height: 50px;
+  margin-top: 10px;
+  text-align: center;
+  justify-content: center;
+  background-color: map.get(theme.$secondary-palette, 20);
+  color: map.get(theme.$primary-palette, 80);
+}
+
+
+
+.value-card{
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.coin-card{
-  background-color: map.get(theme.$secondary-palette, 20);
-  display: flex;
-  align-items: left;
-  border-radius: 20px;
-  padding: 1%;
-  margin: 5%;
-  cursor: pointer;
-}
-
-.value{
-  padding-bottom: 20px;
-  margin-left: 12%;
-  gap:10px;
-}
-
-.coin-header{
-  display: flex;
-  align-items: center;
-  justify-content: right;
-  margin: 10px;
-  gap: 10px;
-}
-
-.coin-info{
-  color: map.get(theme.$primary-palette, 80);
-}
-
-.coin-symbol{
-  font-size: 12px;
-  color: map.get(theme.$primary-palette, 50);
-}
-
-.coin-info p,
-.value p {
-  margin: 0;
-}
-
-.value{
-  line-height: 1.5;
-  font-size: 20px;
-  font-weight: bold;
-  color: map.get(theme.$primary-palette, 80);
-}
-
-.percentage{
-  font-size: 16px;
-  font-style: italic;
-}
-
-.profit{
-  color: #4caf50;
-}
-
-.loss{
-  color: #f44336;
+  width: 100%;
 }

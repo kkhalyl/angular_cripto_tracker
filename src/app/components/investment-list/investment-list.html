@@ -1,15 +1,3 @@
-<mat-toolbar color="primary">
-  <div class="toolbar-left">
-    <img src="assets/logo.png" alt="Logo" class="logo" />
-  </div>
-  <div class="toolbar-right">
-    <span class="login">Login</span>
-    <a routerLink="/login">
-      <img src="assets/login.png" alt="user" class="user-icon" />
-    </a>
-    <router-outlet />
-  </div>
-</mat-toolbar>
 <div class="steps">
   <div class="step-card">
     <mat-card-content class="step">
@@ -32,46 +20,50 @@
 <mat-card class="select-coin">
   <mat-card-content>
     <mat-card-title>Selecione a Criptomoeda</mat-card-title>
-<div class="coin-bar">
-<ng-container *ngFor="let inv of investments">
-  <mat-card *ngIf="inv.cryptoId === 'bitcoin'" class="coin-card">
-    <mat-card-content class="coin-header">
-      <img src="assets/bitcoin.png" alt="Bitcoin" class="coin-iconB" />
-      <div class="coin-info">
-        <p class="coin-name">{{ inv.cryptoId | titlecase }}</p>
-        <p class="coin-symbol">{{ inv.cryptoSymbol }}</p>
-      </div>
-    </mat-card-content>
-    <div class="value">
-        <p>R$ {{ inv.currentPrice | number:'1.2-2' }}</p>
-        <p class="percentage">+5,00%</p>
+    <div class="coin-bar">
+      <ng-container *ngFor="let inv of investments">
+        <mat-card *ngIf="inv.cryptoId === 'bitcoin'" class="coin-card" [routerLink]="['/purchase', inv.cryptoId]">
+          <mat-card-content class="coin-header">
+            <img src="assets/bitcoin.png" alt="Bitcoin" class="coin-icon" />
+            <div class="coin-info">
+              <p class="coin-name">{{ inv.cryptoId | titlecase }}</p>
+              <p class="coin-symbol">{{ inv.cryptoSymbol }}</p>
+            </div>
+          </mat-card-content>
+          <div class="value" >
+            <p>R$ {{ inv.currentPrice | number:'1.0-0' }}</p>
+            <p class="percentage" *ngIf="inv.priceChangePercentage24h !== undefined"  [ngClass]="{'profit': inv.priceChangePercentage24h >= 0, 'loss': inv.priceChangePercentage24h < 0}">{{ inv.priceChangePercentage24h | number:'1.2-2' }}%</p>
+          </div>
+        </mat-card>
+
+        <mat-card *ngIf="inv.cryptoId === 'ethereum'" class="coin-card" [routerLink]="['/purchase', inv.cryptoId]">
+          <mat-card-content class="coin-header">
+            <img src="assets/ethereum.png" alt="Ethereum" class="coin-icon" />
+            <div class="coin-info">
+              <p class="coin-name">{{ inv.cryptoId | titlecase }}</p>
+              <p class="coin-symbol">{{ inv.cryptoSymbol }}</p>
+            </div>
+          </mat-card-content>
+          <div class="value" >
+            <p>R$ {{ inv.currentPrice | number:'1.0-0' }}</p>
+            <p class="percentage" *ngIf="inv.priceChangePercentage24h !== undefined"  [ngClass]="{'profit': inv.priceChangePercentage24h >= 0, 'loss': inv.priceChangePercentage24h < 0}">{{ inv.priceChangePercentage24h | number:'1.2-2' }}%</p>
+          </div>
+        </mat-card>
+
+        <mat-card *ngIf="inv.cryptoId === 'solana'" class="coin-card" [routerLink]="['/purchase', inv.cryptoId]">
+          <mat-card-content class="coin-header">
+            <img src="assets/solana.png" alt="Solana" class="coin-icon" />
+            <div class="coin-info">
+              <p class="coin-name">{{ inv.cryptoId | titlecase }}</p>
+              <p class="coin-symbol">{{ inv.cryptoSymbol }}</p>
+            </div>
+          </mat-card-content>
+          <div class="value" >
+            <p>R$ {{ inv.currentPrice | number:'1.0-0' }}</p>
+            <p class="percentage" *ngIf="inv.priceChangePercentage24h !== undefined"  [ngClass]="{'profit': inv.priceChangePercentage24h >= 0, 'loss': inv.priceChangePercentage24h < 0}">{{ inv.priceChangePercentage24h | number:'1.2-2' }}%</p>
+          </div>
+        </mat-card>
+      </ng-container>
     </div>
-  </mat-card>
-  <mat-card *ngIf="inv.cryptoId === 'ethereum'" class="coin-card">
-    <mat-card-content class="coin-header">
-      <img src="assets/ethereum.png" alt="Ethereum" class="coin-iconE" />
-      <div class="coin-info">
-        <p class="coin-name">{{ inv.cryptoId | titlecase }}</p>
-        <p class="coin-symbol">{{ inv.cryptoSymbol }}</p>
-      </div>
-    </mat-card-content>
-    <div class="value">
-        <p>R$ {{ inv.currentPrice | number:'1.2-2' }}</p>
-        <p class="percentage">+5,00%</p>
-    </div>
-  </mat-card>
-  <mat-card *ngIf="inv.cryptoId === 'solana'" class="coin-card">
-    <mat-card-content class="coin-header">
-      <img src="assets/solana.png" alt="Solana" class="coin-iconS" />
-      <div class="coin-info">
-        <p class="coin-name">{{ inv.cryptoId | titlecase }}</p>
-        <p class="coin-symbol">{{ inv.cryptoSymbol }}</p>
-      </div>
-    </mat-card-content>
-    <div class="value">
-        <p>R$ {{ inv.currentPrice | number:'1.2-2' }}</p>
-        <p class="percentage">+5,00%</p>
-    </div>
-  </mat-card>
-</ng-container>
-</div>
+  </mat-card-content>
+</mat-card>

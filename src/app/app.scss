@@ -1,0 +1,48 @@
+@use 'sass:map'; 
+@use '@angular/material' as mat;
+@use '/workspaces/angular_cripto_tracker/src/_theme-colors.scss' as theme; 
+@include mat.core();
+
+mat-toolbar {
+  background-color: map.get(theme.$secondary-palette, 10);
+  display: flex;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 70%;
+  display: block;
+  filter: invert(100%);
+}
+
+.toolbar-left{
+  height:100px;
+  display: flex;
+  align-items: center;
+}
+
+.toolbar-right{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  justify-content: space-between;
+}
+
+.user-icon{
+  margin-left: -20px;
+  height: 50px;
+  &:hover {
+    filter:invert(100%);
+  }
+}
+
+
+.login {
+  border-radius: 10px;
+  margin: 20px;
+  color: #eecc94;
+}

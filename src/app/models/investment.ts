@@ -7,5 +7,6 @@
     purchasePrice: number;
     purchaseDate: Date;
     currentPrice?: number;
+    priceChangePercentage24h?: number;
     profitOrLoss?: number;
 }

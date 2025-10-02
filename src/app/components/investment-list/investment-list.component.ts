@@ -5,21 +5,20 @@ import { InvestmentService } from '/workspaces/angular_cripto_tracker/src/app/se
 import { CryptoService } from '/workspaces/angular_cripto_tracker/src/app/services/crypto';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-import { MatToolbar } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; // Import spinner module
-import { catchError, finalize } from 'rxjs/operators'; // Import RxJS operators
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { catchError, finalize } from 'rxjs/operators';
 import { EMPTY } from 'rxjs';
 
 
 @Component({
   selector: 'app-investment-list',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule, MatCardModule, MatInputModule, MatListModule, MatDividerModule, MatProgressSpinnerModule, MatToolbar, RouterLink, RouterOutlet],
+  imports: [CommonModule, MatButtonModule, MatIconModule, MatCardModule, MatInputModule, MatListModule, MatDividerModule, MatProgressSpinnerModule, RouterLink, RouterOutlet],
   templateUrl: './investment-list.html',
   styleUrl: './investment-list.scss'
 })
@@ -56,6 +55,7 @@ export class InvestmentListComponent implements OnInit {
           const priceInfo = priceData[inv.cryptoId];
           if (priceInfo) {
             inv.currentPrice = priceInfo.brl;
+            inv.priceChangePercentage24h = priceInfo.brl_24h_change;
             if (inv.currentPrice !== undefined) {
               const totalPurchaseCost = inv.quantity * inv.purchasePrice;
               const currentTotalValue = inv.quantity * inv.currentPrice;

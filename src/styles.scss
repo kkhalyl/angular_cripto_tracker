@@ -12,7 +12,6 @@ html {
 
 body {
   margin: 0;
-  padding-bottom: 50%;
   color-scheme: light dark;
   color: map.get(theme.$primary-palette, 100);
   font: var(--mat-sys-body-medium);

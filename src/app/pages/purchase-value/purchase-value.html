@@ -1,0 +1,41 @@
+<div class="steps">
+  <div class="step-card">
+    <mat-card-content class="step">
+      <div class="stepCircle">1</div><span>Escolha sua Criptomoeda</span>
+    </mat-card-content>
+    <div class="divider"></div>
+    <mat-card-content class="step">
+      <div class="stepCircle">2</div><span>Valor da Compra</span>
+    </mat-card-content>
+    <div class="divider"></div>
+    <mat-card-content class="step">
+      <div class="stepCircle">3</div><span>Data da Transição</span>
+    </mat-card-content>
+    <div class="divider"></div>
+    <mat-card-content class="step">
+      <div class="stepCircle">4</div><span>Resultados</span>
+    </mat-card-content>
+  </div>
+</div>
+
+<mat-card class="purchase-value">
+    <mat-card-title>Quantos {{ selectedCryptoId | titlecase }} você Comprou?</mat-card-title>
+    <mat-card-content class="value-card">
+        <div class = "value-input">
+            <p class="value-label">Valor</p>
+            <mat-form-field appearance="outline" class="custom-form-field" subscriptSizing="dynamic">
+                <mat-label>R$ 0,00</mat-label>
+                <input matInput type="number" placeholder="R$ 0,00" [(ngModel)]="selectedCryptoValue" />
+            </mat-form-field>
+        </div>
+        <div class="buttons">
+            <button mat-raised-button class="button-addValue" color="primary" (click)="addValue(10)">R$ 10</button>
+            <button mat-raised-button class="button-addValue" color="primary" (click)="addValue(100)">R$ 100</button>
+            <button mat-raised-button class="button-addValue" color="primary" (click)="addValue(500)">R$ 500</button>
+            <button mat-raised-button class="button-addValue" color="primary" (click)="addValue(1000)">R$ 1.000</button>
+        </div>
+        <div class = "next-button">
+            <button mat-raised-button color="accent" [routerLink]="['/purchase-date', selectedCryptoId, selectedCryptoValue]">Continuar</button>
+        </div>
+    </mat-card-content>
+</mat-card>

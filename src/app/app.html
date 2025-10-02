@@ -1,1 +1,13 @@
-<app-investment-list></app-investment-list>
+<mat-toolbar color="primary">
+  <div class="toolbar-left">
+    <img src="assets/logo.png" alt="Logo" class="logo" />
+  </div>
+  <div class="toolbar-right">
+    <span class="login">Login</span>
+    <a routerLink="/login">
+      <img src="assets/login.png" alt="user" class="user-icon" />
+    </a>
+  </div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

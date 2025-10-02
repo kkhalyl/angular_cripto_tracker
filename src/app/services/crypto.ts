@@ -13,7 +13,7 @@ export class CryptoService {
   getPrices(crtptoIds: string[]): Observable<any> {
     const ids = crtptoIds.join(',');
     const vs_currencies = 'brl';
-    return this.http.get(`${this.apiUrl}?ids=${ids}&vs_currencies=${vs_currencies}`);
+    return this.http.get(`${this.apiUrl}?ids=${ids}&vs_currencies=${vs_currencies}&include_24hr_change=true`);
   }
   
 }
