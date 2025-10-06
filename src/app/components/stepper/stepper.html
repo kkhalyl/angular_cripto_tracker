@@ -1,0 +1,29 @@
+<div class="steps">
+  <div class="step-card">
+    <mat-card-content class="step">
+      <div class="step-circle" [ngClass]="{'active': currentStep >= 1}">1</div>
+      <span>Escolha sua Criptomoeda</span>
+    </mat-card-content>
+
+    <div class="divider"></div>
+
+    <mat-card-content class="step">
+      <div class="step-circle" [ngClass]="{'active': currentStep >= 2}">2</div>
+      <span>Valor da Compra</span>
+    </mat-card-content>
+
+    <div class="divider"></div>
+
+    <mat-card-content class="step">
+      <div class="step-circle" [ngClass]="{'active': currentStep >= 3}">3</div>
+      <span>Data da Transição</span>
+    </mat-card-content>
+
+    <div class="divider"></div>
+
+    <mat-card-content class="step">
+      <div class="step-circle" [ngClass]="{'active': currentStep >= 4}">4</div>
+      <span>Resultados</span>
+    </mat-card-content>
+  </div>
+</div>

@@ -9,49 +9,14 @@ mat-card-content{
   padding-bottom:0px !important;
 }
 
-.step-card{
-  display: flex;
-  padding: 50px;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.step{
-  color: map.get(theme.$primary-palette, 80);
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding-top:0px !important;
-  padding-bottom:0px !important;
-  padding: 0px !important;
-}
-
-.stepCircle{
-  background-color: map.get(theme.$secondary-palette, 20);
-  color: map.get(theme.$primary-palette, 80);
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  flex-shrink: 0;
-}
-
-.divider {
-  width: 50px;
-  height: 2px;
-  background-color: #555;
-}
-
 .select-coin{
   background-color: map.get(theme.$secondary-palette, 10);
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 1% 10% 5% 10%;
   border-radius: 20px;
+  min-width: 750px;
   max-width: 900px;
   width: 80%;
   margin: 0 auto;
@@ -64,7 +29,7 @@ mat-card-content{
   color: map.get(theme.$primary-palette, 80);
   font-weight: 500;
   width: 100%;
-  margin: 5%;
+  margin: 5% auto;
 }
 
 .coin-icon{

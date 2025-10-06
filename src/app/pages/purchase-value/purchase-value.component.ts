@@ -20,6 +20,8 @@ import { OnInit } from '@angular/core';
 export class PurchaseValue implements OnInit {
   selectedCryptoId: string | null = null;
   selectedCryptoValue: number | null = null;
+  selectedPurchaseDate: number | null = null;
+  
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {

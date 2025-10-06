@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PurchaseValue } from './purchase-value.component';
+import { PurchaseDate } from './purchase-date';
 
-describe('PurchaseValue', () => {
-  let component: PurchaseValue;
-  let fixture: ComponentFixture<PurchaseValue>;
+describe('PurchaseDate', () => {
+  let component: PurchaseDate;
+  let fixture: ComponentFixture<PurchaseDate>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PurchaseValue]
+      imports: [PurchaseDate]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PurchaseValue);
+    fixture = TestBed.createComponent(PurchaseDate);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

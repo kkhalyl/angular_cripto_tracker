@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { Investment } from '/workspaces/angular_cripto_tracker/src/app/models/investment';
 import { InvestmentService } from '/workspaces/angular_cripto_tracker/src/app/services/investment.services';
 import { CryptoService } from '/workspaces/angular_cripto_tracker/src/app/services/crypto';
@@ -18,7 +18,7 @@ import { EMPTY } from 'rxjs';
 @Component({
   selector: 'app-investment-list',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatIconModule, MatCardModule, MatInputModule, MatListModule, MatDividerModule, MatProgressSpinnerModule, RouterLink, RouterOutlet],
+  imports: [CommonModule, MatButtonModule, MatIconModule, MatCardModule, MatInputModule, MatListModule, MatDividerModule, MatProgressSpinnerModule, RouterLink],
   templateUrl: './investment-list.html',
   styleUrl: './investment-list.scss'
 })
@@ -39,18 +39,15 @@ export class InvestmentListComponent implements OnInit {
 
     if (cryptoIds.length > 0) {
       this.cryptoService.getPrices(cryptoIds).pipe(
-        // This block runs ONLY if the API call fails
         catchError(error => {
           console.error('API Error:', error);
           this.errorMessage = 'Could not load live price data. Please try again later.';
-          return EMPTY; // Stops the observable stream gracefully
+          return EMPTY;
         }),
-        // This block runs when the call is complete (on success OR error)
         finalize(() => {
           this.isLoading = false;
         })
       ).subscribe(priceData => {
-        // This block runs ONLY on success
         this.investments.forEach(inv => {
           const priceInfo = priceData[inv.cryptoId];
           if (priceInfo) {
@@ -65,7 +62,7 @@ export class InvestmentListComponent implements OnInit {
         });
       });
     } else {
-      this.isLoading = false; // No investments to load
+      this.isLoading = false;
     }
   }
 }

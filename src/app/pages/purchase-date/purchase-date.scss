@@ -8,35 +8,40 @@ mat-card-content{
   padding-bottom:0px !important;
 }
 
-.purchase-value{
+
+.purchase-date{
   background-color: map.get(theme.$secondary-palette, 10);
   display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 1% 10% 5% 10%;
   border-radius: 20px;
-  min-width: 750px;
   max-width: 900px;
   width: 80%;
   margin: 0 auto;
 }
 
-.purchase-value mat-card-title {
+.purchase-date mat-card-title {
   text-align: center;
   font-style: bold;
   font-size: 40px;
   color: map.get(theme.$primary-palette, 80);
   font-weight: 500;
   width: 100%;
-  margin: 5%;
-  min-width: 700px;
+  margin: 5% auto;
 }
 
-.prefix{
-  padding-left: 10px;
+.date-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.value-input {
+.date-label{
+  margin-top: 0px;
+  margin-bottom: 2px;
+}
+
+.date-input{
   text-align: left;
   font-style: normal;
   font-size: 15px;
@@ -47,12 +52,7 @@ mat-card-content{
   min-width: 700px;
 }
 
-.value-label {
-  margin-top: 0px;
-  margin-bottom: 2px;
-}
-
-.custom-form-field {
+.date-form-field{
   min-width: 700px;
   min-height: 50px;
   margin-top: 10px;
@@ -60,25 +60,6 @@ mat-card-content{
   justify-content: center;
   background-color: map.get(theme.$secondary-palette, 20);
   color: map.get(theme.$primary-palette, 80);
-}
-
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type=number] {
-  appearance: textfield;
-  -moz-appearance: textfield;
-}
-
-.value-card{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
 }
 
 .button-addValue{
@@ -96,6 +77,7 @@ input[type=number] {
 }
 
 .buttons{
+  justify-content: center;
   margin: 10px;
 }
 
@@ -112,4 +94,10 @@ input[type=number] {
     background-color: map.get(theme.$secondary-palette, 70);
     color: map.get(theme.$primary-palette, 20);
   }
+}
+
+.date-form-field .mat-mdc-input-element {
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
 }

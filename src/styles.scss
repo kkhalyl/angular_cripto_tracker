@@ -17,6 +17,13 @@ body {
   font: var(--mat-sys-body-medium);
 }
 
+.custom-form-field .mat-mdc-form-field-infix{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
 
 mat-card.investment-card {
   background-color: map.get(theme.$primary-palette, 40);
@@ -48,3 +55,14 @@ mat-card mat-list-item.loss {
   color: #f44336;
 }
 
+
+:root {
+  @include mat.datepicker-overrides((
+    calendar-body-label-text-color: map.get(theme.$primary-palette, 80),
+    calendar-container-background-color: map.get(theme.$primary-palette, 20),
+    calendar-header-text-color: map.get(theme.$primary-palette, 80),
+    calendar-period-button-text-color: map.get(theme.$primary-palette, 80),
+    calendar-container-text-color: map.get(theme.$primary-palette, 80),
+    calendar-date-text-color: map.get(theme.$primary-palette, 80),
+  ));
+}

@@ -1,0 +1,55 @@
+@use 'sass:map'; 
+@use '@angular/material' as mat;
+@use '/workspaces/angular_cripto_tracker/src/_theme-colors' as theme;
+@include mat.core();
+
+.step-circle {
+  background-color: map.get(theme.$secondary-palette, 20);
+  color: map.get(theme.$primary-palette, 80);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.step-circle.active {
+  background-color: map.get(theme.$secondary-palette, 80);
+  color: map.get(theme.$primary-palette, 20);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.step-card{
+  display: flex;
+  padding: 25px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.step{
+  color: map.get(theme.$primary-palette, 80);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-top:0px !important;
+  padding-bottom:0px !important;
+  padding: 0px !important;
+}
+
+.divider {
+  width: 50px;
+  height: 2px;
+  background-color: #555;
+}
