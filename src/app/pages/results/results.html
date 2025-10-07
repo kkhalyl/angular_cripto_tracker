@@ -1,1 +1,17 @@
-<p>results works!</p>
+<mat-card class="info-review">
+    <mat-card-title>Revise suas informações</mat-card-title>
+    <mat-card-content class="info-content">
+        <div class="info-item">
+            <p class="info-label">Criptomoeda:</p>
+            <p class="info-value">{{ investmentCoin }}</p>
+        </div>
+        <div class="info-item">
+            <p class="info-label">Valor Investido:</p>
+            <p class="info-value">R$ {{ investmentValue | number:'1.2-2' }}</p>
+        </div>
+        <div class="info-item">
+            <p class="info-label">Data da Compra:</p>
+            <p class="info-value">{{ investmentDate | date:'dd/MM/yyyy' }}</p>
+        </div>
+    </mat-card-content>
+</mat-card>

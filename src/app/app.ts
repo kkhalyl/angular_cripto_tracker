@@ -23,11 +23,9 @@ export class App {
       this.ngZone.run(() => {
         if (navEvent.urlAfterRedirects.includes('/results')) {
           this.showStepper.set(false);
-          console.log('Rota de resultados detectada. showStepper agora é:', this.showStepper);
         }
         else {
           this.showStepper.set(true);
-          console.log('Rota de resultados não detectada. showStepper agora é:', this.showStepper);
         }
       });
     });
