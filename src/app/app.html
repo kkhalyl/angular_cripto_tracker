@@ -9,5 +9,7 @@
     </a>
   </div>
 </mat-toolbar>
-<app-stepper></app-stepper>
+
+<app-stepper *ngIf="showStepper"></app-stepper>
+
 <router-outlet></router-outlet>

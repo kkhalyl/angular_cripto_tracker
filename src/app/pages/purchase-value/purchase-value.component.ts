@@ -9,11 +9,12 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { OnInit } from '@angular/core';
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
   selector: 'app-purchase-value',
   standalone: true,
-  imports: [MatButtonModule, MatCardModule, MatListModule, MatIconModule, MatInputModule, MatDividerModule, CommonModule, RouterModule, FormsModule],
+  imports: [MatButtonModule, MatCardModule, MatListModule, MatIconModule, MatInputModule, MatDividerModule, CommonModule, RouterModule, FormsModule, NgxMaskDirective],
   templateUrl: './purchase-value.html',
   styleUrl: './purchase-value.scss'
 })

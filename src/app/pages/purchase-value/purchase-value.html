@@ -3,9 +3,17 @@
     <mat-card-content class="value-card">
         <div class = "value-input">
             <p class="value-label">Valor</p>
-            <mat-form-field appearance="outline" class="custom-form-field" subscriptSizing="dynamic">
-              <span class="prefix" matPrefix>R$&nbsp;</span>
-              <input matInput type="number" placeholder="0,00" [(ngModel)]="selectedCryptoValue" />
+            <mat-form-field class="custom-form-field" subscriptSizing="dynamic">
+                <span class="prefix" matPrefix>R$&nbsp;</span>
+                <input matInput
+                    type="text"
+                    placeholder="0,00"
+                    [(ngModel)]="selectedCryptoValue"
+                    mask="separator.2"
+                    thousandSeparator="."
+                    decimalMarker=","
+                    [allowNegativeNumbers]="false"
+                />
             </mat-form-field>
         </div>
         <div class="buttons">
