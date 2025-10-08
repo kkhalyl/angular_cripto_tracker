@@ -23,7 +23,13 @@
             <button matFab class="button-addValue" color="primary" (click)="addValue(1000)">R$ 1.000</button>
         </div>
         <div class="next-button">
-            <button class="continue-button" matFab color="primary" [routerLink]="['/purchase-date', selectedCryptoValue]">Continuar</button>
+            <button class="continue-button" matFab color="primary" 
+            [routerLink]="['/purchase-date']"
+                [queryParams]="{ 
+                    coin: selectedCryptoId, 
+                    value: selectedCryptoValue 
+                }"
+            >Continuar</button>
         </div>
     </mat-card-content>
 </mat-card>

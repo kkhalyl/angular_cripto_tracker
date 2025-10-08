@@ -7,6 +7,6 @@ import { ResultsComponent } from './pages/results/results';
 export const routes: Routes = [
     { path: '', component: InvestmentListComponent }, 
     { path: 'purchase/:cryptoId', component: PurchaseValue },
-    { path: 'purchase-date/:selectedCryptoValue', component: PurchaseDate },
+    { path: 'purchase-date', component: PurchaseDate },
     { path: 'results', component: ResultsComponent }
 ];

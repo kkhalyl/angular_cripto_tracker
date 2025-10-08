@@ -1,0 +1,45 @@
+@use 'sass:map'; 
+@use '@angular/material' as mat;
+@use '/workspaces/angular_cripto_tracker/src/_theme-colors.scss' as theme; 
+@include mat.core();
+
+
+.info-review{
+    background-color: map.get(theme.$primary-palette,10);
+    display: flex;
+    border-radius: 20px;
+    min-width: 300px;
+    max-width: 400px;
+    margin: 10px;
+}
+
+.info-review mat-card-title{
+    text-align: left;
+    font-style: bold;
+    font-size: 25px;
+    color: map.get(theme.$primary-palette, 80);
+    font-weight: 500;
+    width: 100%;
+    margin: 20px;
+}
+
+.info-content{
+    margin-top: 0px !important;
+    margin: 20px;
+    padding: 0px !important;
+}
+
+.info-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0; 
+}
+
+.info-label{
+    color: map.get(theme.$primary-palette, 60);
+    
+}
+
+.info-value{
+    color: map.get(theme.$primary-palette, 80);
+}

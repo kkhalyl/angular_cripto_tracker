@@ -10,7 +10,7 @@ mat-card-content{
 
 
 .purchase-date{
-  background-color: map.get(theme.$secondary-palette, 10);
+  background-color: map.get(theme.$primary-palette, 10);
   display: flex;
   padding: 1% 10% 5% 10%;
   border-radius: 20px;
@@ -59,12 +59,12 @@ mat-card-content{
   margin-top: 10px;
   align-items: center;
   justify-content: center;
-  background-color: map.get(theme.$secondary-palette, 20);
+  background-color: map.get(theme.$primary-palette, 20);
   color: map.get(theme.$primary-palette, 80);
 }
 
 .button-addValue{
-  background-color: map.get(theme.$secondary-palette, 20);
+  background-color: map.get(theme.$primary-palette, 20);
   color: map.get(theme.$primary-palette, 80);
   border-radius: 10px;
   margin-left: 10px;
@@ -83,17 +83,18 @@ mat-card-content{
 }
 
 .continue-button{
+  font-weight: bold;
   text-align: center;
   font-size: 20px;
-  background-color: map.get(theme.$secondary-palette, 80);
-  color: map.get(theme.$primary-palette, 20);
+  background-color: map.get(theme.$secondary-palette, 50);
+  color: map.get(theme.$secondary-palette, 100);
   border-radius: 10px;
   margin-top: 10px;
   min-width: 700px;
   text-align: center;
   &:hover {
-    background-color: map.get(theme.$secondary-palette, 70);
-    color: map.get(theme.$primary-palette, 20);
+    background-color: darken(map.get(theme.$secondary-palette, 50),10%);
+    color: darken(map.get(theme.$secondary-palette, 100),10%);
   }
 }
 

@@ -27,11 +27,13 @@ export class PurchaseDate implements OnInit {
   constructor(private route: ActivatedRoute) { }
   
   ngOnInit(): void {
-    this.selectedCryptoId = this.route.snapshot.paramMap.get('cryptoId');
-    const valueString = this.route.snapshot.queryParamMap.get('selectedCryptoValue');
+    this.selectedCryptoId = this.route.snapshot.queryParamMap.get('coin');
+    const valueString = this.route.snapshot.queryParamMap.get('value');
     if (valueString) {
       this.selectedCryptoValue = parseFloat(valueString);
     }
+    console.log('Selected Crypto:', this.selectedCryptoId);
+    console.log('Selected Value:', this.selectedCryptoValue);
   }
 
   setDateBack(unit: 'month' | 'year' | 'fiveYears' | 'tenYears'): void {

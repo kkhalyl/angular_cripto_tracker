@@ -4,7 +4,7 @@
 @include mat.core();
 
 mat-toolbar {
-  background-color: map.get(theme.$secondary-palette, 10);
+  background-color: map.get(theme.$primary-palette, 10);
   display: flex;
   align-items: center;
   height: 100px;
@@ -15,7 +15,6 @@ mat-toolbar {
 .logo {
   height: 70%;
   display: block;
-  filter: invert(100%);
 }
 
 .toolbar-left{
@@ -44,5 +43,5 @@ mat-toolbar {
 .login {
   border-radius: 10px;
   margin: 20px;
-  color: #eecc94;
+  color: map.get(theme.$secondary-palette, 80);
 }

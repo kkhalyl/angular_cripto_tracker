@@ -10,7 +10,7 @@ mat-card-content{
 }
 
 .select-coin{
-  background-color: map.get(theme.$secondary-palette, 10);
+  background-color: map.get(theme.$primary-palette, 10);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +46,7 @@ mat-card-content{
 }
 
 .coin-card{
-  background-color: map.get(theme.$secondary-palette, 20);
+  background-color: map.get(theme.$primary-palette, 20);
   display: flex;
   align-items: left;
   border-radius: 20px;

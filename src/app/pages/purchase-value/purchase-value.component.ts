@@ -27,8 +27,7 @@ export class PurchaseValue implements OnInit {
 
   ngOnInit(): void {
     this.selectedCryptoId = this.route.snapshot.paramMap.get('cryptoId');
-
-    console.log('Selected Crypto:', this.selectedCryptoId);
+    console.log('ID recebido na página de valor:', this.selectedCryptoId);
   }
 
   addValue(amount: number): void {
