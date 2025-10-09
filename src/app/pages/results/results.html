@@ -1,31 +1,48 @@
-<mat-card class="info-review">
-    <mat-card-title>Resumo do Investimento</mat-card-title>
-    <mat-card-content class="info-content">
-        <div class="info-item">
-            <span class="info-label">Criptomoeda:</span>
-            <span class="info-value">{{ investmentCoin | titlecase}}</span>
-        </div>
-        <div class="info-item">
-            <span class="info-label">Valor Investido:</span>
-            <span class="info-value">R$ {{ investmentValue | number:'1.2-2' }}</span>
-        </div>
-        <div class="info-item">
-            <span class="info-label">Data da Compra:</span>
-            <span class="info-value">{{ investmentDate | date:'dd/MM/yyyy' }}</span>
-        </div>
-    </mat-card-content>
-</mat-card>
+<div class="results">
+<div class="resultsL">
+    <mat-card class="info-review">
+        <mat-card-title>Resumo da Transição</mat-card-title>
+        <mat-card-content class="info-content">
+            <div class="info-item">
+                <span class="info-label">Criptomoeda:</span>
+                <span class="info-value">{{ investmentCoin | titlecase}}</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Valor Investido:</span>
+                <span class="info-value">R$ {{ investmentValue | number:'1.2-2' }}</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Data da Compra:</span>
+                <span class="info-value">{{ investmentDate | date:'dd/MM/yyyy' }}</span>
+            </div>
+        </mat-card-content>
+    </mat-card>
 
-<mat-card class="current-performance">
-    <mat-card-title>Retorno do Investimento</mat-card-title>
-    <mat-card-content class="performance-content">
-        <div class="performance-item">
-            <span class="performance-value"></span>
-            <span class="performance-label">Valor Atual</span>
-        </div>
-        <div class="gain-item">
-            <span class="gain-value"></span>
-            <span class="gain-percent"></span>
-        </div>
-    </mat-card-content>
-</mat-card>
+    <mat-card class="current-performance">
+        <mat-card-title>Retorno do Investimento</mat-card-title>
+        <mat-card-content class="performance-content">
+            <div class="performance-item">
+                <span class="performance-value" *ngIf="investmentNow !== null"  [ngClass]="{'profit': investmentNow >= 0, 'loss': investmentNow < 0}">R$ {{ investmentNow | number:'1.0-0' }}</span>
+                <span class="performance-label">Valor Atual</span>
+            </div>
+            <div class="performance-item">
+                <span class="gain-value" *ngIf="investmentROI !== null"  [ngClass]="{'profit': investmentROI >= 0, 'loss': investmentROI < 0}">R$ {{ investmentROI | number:'1.0-0' }}</span>
+                <span class="gain-percent" *ngIf="investmentPercentage !== null" [ngClass]="{'profit': investmentPercentage >= 0, 'loss': investmentPercentage < 0}">{{ investmentPercentage | number:'1.0-0' }}%</span>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<div class="resultR">
+    <mat-card class="performance-graphic">
+        <mat-card-title>Evolução do Retorno</mat-card-title>
+        <mat-card-content class="performance-container">
+            <canvas baseChart
+                [data]="lineChartData"
+                [options]="lineChartOptions"
+                [type]="lineChartType">
+            </canvas>
+        </mat-card-content>
+    </mat-card>
+</div>
+</div>

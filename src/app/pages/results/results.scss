@@ -3,12 +3,32 @@
 @use '/workspaces/angular_cripto_tracker/src/_theme-colors.scss' as theme; 
 @include mat.core();
 
+.results{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profit{
+  color: #4caf50;
+}
+
+.loss{
+  color: #f44336;
+}
+
+.resultsL{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
 .info-review{
     background-color: map.get(theme.$primary-palette,10);
     display: flex;
     border-radius: 20px;
-    min-width: 300px;
+    min-width: 400px;
     max-width: 400px;
     margin: 10px;
 }
@@ -42,4 +62,84 @@
 
 .info-value{
     color: map.get(theme.$primary-palette, 80);
+}
+
+.current-performance{
+    background-color: map.get(theme.$primary-palette,10);
+    display: flex;
+    border-radius: 20px;
+    min-width: 400px;
+    max-width: 400px;
+    margin: 10px;
+}
+
+.current-performance mat-card-title{
+    text-align: left;
+    font-size: 25px;
+    color: map.get(theme.$primary-palette, 80);
+    font-weight: 500;
+    width: 100%;
+    margin: 20px;
+}
+
+.performance-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.performance-value{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.performance-label{
+    font-size:15px;
+    color: map.get(theme.$primary-palette, 60)
+}
+
+.gain-value{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.gain-value{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.gain-percent{
+    font-size: 15px;
+}
+
+.performance-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+.resultsL{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.performance-graphic{
+    background-color: map.get(theme.$primary-palette,10);
+    display: flex;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.performance-graphic mat-card-title{
+    text-align: left;
+    font-style: bold;
+    font-size: 25px;
+    color: map.get(theme.$primary-palette, 80);
+    font-weight: 500;
+    width: 100%;
+    margin: 20px;
 }
