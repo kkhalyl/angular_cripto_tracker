@@ -130,8 +130,14 @@
 .performance-graphic{
     background-color: map.get(theme.$primary-palette,10);
     display: flex;
+    justify-content: center;
+    min-width: 530px;
     border-radius: 20px;
     margin: 10px;
+}
+
+.performance-container{
+    max-width: 500px;
 }
 
 .performance-graphic mat-card-title{

@@ -47,12 +47,12 @@ export class ResultsComponent implements OnInit{
     },
     scales: {
       x: {
-        type: 'timeseries', // Define o tipo como escala de tempo
+        type: 'timeseries', 
         time: {
-          unit: 'hour', // Diz ao gráfico para mostrar rótulos por hora
-          tooltipFormat: 'dd/MM/yy HH:mm', // Formato no tooltip
+          unit: 'hour', 
+          tooltipFormat: 'dd/MM/yy HH:mm', 
           displayFormats: {
-            hour: 'HH:mm' // Formato no eixo X (ex: 15:00)
+            hour: 'HH:mm' 
           }
         },
         ticks: { color: '#9aaccd' },
@@ -100,16 +100,33 @@ export class ResultsComponent implements OnInit{
 
     const diffDays = (toDate.getTime() - fromDate.getTime()) / (1000 * 60 * 60 * 24);
 
-    // Define intervalo e unidade do eixo X
+    
     let intervalH = 1;
-    let unit: 'hour' | 'day' | 'month' = 'hour';
-    if (diffDays < 1)       { intervalH = 4; unit = 'hour'; }
-    else if (diffDays < 30) { intervalH = 24 * 5; unit = 'day'; }
-    else                    { intervalH = 24 * 30 * 2; unit = 'month'; }
+    let unit: 'hour' | 'day' | 'month' | 'year' = 'hour';
+
+    if (diffDays < 1) {
+      intervalH = 6; 
+      unit = 'hour';
+    } else if (diffDays < 60) {
+      intervalH = 24 * 5; 
+      unit = 'day';
+    } else if (diffDays < 370){
+      intervalH = 24 * 30 * 2; 
+      unit = 'month';
+    }
+      else{
+      intervalH = 24 * 365; 
+      unit = 'year';
+      }
+
 
     // Filtra dados
     const first = prices[0][0];
-    const filtered = prices.filter((p: [number, number]) => ((p[0] - first) / 36e5) % intervalH < 1);
+    const filtered = prices.filter((p: [number, number]) => {
+    const diffHours = (p[0] - first) / 36e5;
+    return diffHours % intervalH < 1;
+    });
+
 
     // Mapeia para {x, y}
     this.lineChartData.datasets[0].data = filtered.map((p: [number, number]) => ({ x: p[0], y: p[1] }));
@@ -122,8 +139,8 @@ export class ResultsComponent implements OnInit{
           type: 'timeseries',
           time: {
             unit,
-            tooltipFormat: 'dd/MM/yy HH:mm',
-            displayFormats: { hour: 'HH:mm', day: 'dd/MM', month: 'MM/yy' }
+            tooltipFormat: 'dd/MM/yy',
+            displayFormats: { hour: 'HH:mm', day: 'dd/MM', month: 'MM/yy' , year: 'yyyy'}
           },
           ticks: { color: '#9aaccd' },
           grid: { color: 'rgba(154, 172, 205, 0.1)' }

@@ -28,6 +28,7 @@
             <div class="performance-item">
                 <span class="gain-value" *ngIf="investmentROI !== null"  [ngClass]="{'profit': investmentROI >= 0, 'loss': investmentROI < 0}">R$ {{ investmentROI | number:'1.0-0' }}</span>
                 <span class="gain-percent" *ngIf="investmentPercentage !== null" [ngClass]="{'profit': investmentPercentage >= 0, 'loss': investmentPercentage < 0}">{{ investmentPercentage | number:'1.0-0' }}%</span>
+                <span class="performance-label">Retorno</span>
             </div>
         </mat-card-content>
     </mat-card>
