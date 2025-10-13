@@ -1,6 +1,6 @@
 @use 'sass:map'; 
 @use '@angular/material' as mat;
-@use '/workspaces/angular_cripto_tracker/src/_theme-colors.scss' as theme; 
+@use '../../../_theme-colors.scss' as theme; 
 @include mat.core();
 
 mat-toolbar {

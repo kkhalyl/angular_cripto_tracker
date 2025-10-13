@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
-import { CryptoService } from '/workspaces/angular_cripto_tracker/src/app/services/crypto';
+import { CryptoService } from '../../services/crypto';
 import { BaseChartDirective } from 'ng2-charts';
 import { Chart, registerables, ChartConfiguration, ChartType } from 'chart.js';
 import 'chartjs-adapter-date-fns';

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Investment } from '/workspaces/angular_cripto_tracker/src/app/models/investment';
-import { InvestmentService } from '/workspaces/angular_cripto_tracker/src/app/services/investment.services';
-import { CryptoService } from '/workspaces/angular_cripto_tracker/src/app/services/crypto';
+import { Investment } from '../../models/investment';
+import { InvestmentService } from '../../services/investment.services';
+import { CryptoService } from '../../services/crypto';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
