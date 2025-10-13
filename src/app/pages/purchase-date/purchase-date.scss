@@ -1,6 +1,6 @@
 @use 'sass:map'; 
 @use '@angular/material' as mat;
-@use '../../../_theme-colors.scss' as theme;
+@use '../../../_theme-colors' as theme;
 @include mat.core();
 
 mat-card-content{
@@ -12,6 +12,8 @@ mat-card-content{
 .purchase-date{
   background-color: map.get(theme.$primary-palette, 10);
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 1% 10% 5% 10%;
   border-radius: 20px;
   min-width: 750px;
@@ -26,8 +28,8 @@ mat-card-content{
   font-size: 40px;
   color: map.get(theme.$primary-palette, 80);
   font-weight: 500;
-  width: 100%;
   margin: 5% auto;
+  white-space: nowrap;
 }
 
 .date-card{

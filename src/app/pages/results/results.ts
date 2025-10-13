@@ -91,7 +91,7 @@ export class ResultsComponent implements OnInit{
       const toDate = new Date();
 
       this.cryptoService.getMarketChartDataRange(this.investmentCoin, fromDate, toDate)
-  .subscribe(chartData => {
+  .subscribe((chartData: any) => {
     const prices = chartData.prices;
     if (!prices?.length) return;
 
