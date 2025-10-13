@@ -1,26 +1,114 @@
-# CryptoApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.2.
+# Angular Cripto Tracker
 
-## Development server
+Aplicação Angular para simular e acompanhar investimentos em criptomoedas, exibindo gráficos históricos com intervalos inteligentes e dados atualizados.
 
-To start a local development server, run:
+🔗 **Acesse online:**  
+[https://angular-cripto-tracker.vercel.app/](https://angular-cripto-tracker.vercel.app/)
 
+## Tecnologias Utilizadas
+
+- Angular
+- TypeScript
+- Chart.js + ng2-charts
+- CoinGecko API
+- SCSS
+- Vercel (deploy)
+
+## Funcionalidades
+
+- Simulação de compra de criptomoeda com data e valor
+- Consulta automática do preço histórico
+- Gráfico dinâmico com intervalos adaptados (horas, dias, meses ou anos)
+- Layout responsivo
+- Deploy contínuo na Vercel
+
+## Desenvolvimento Local
+
+### Pré-requisitos
+
+- Node.js
+- Angular CLI
+
+### Rodando o projeto localmente
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/kkhalyl/angular_cripto_tracker.git
+cd angular_cripto_tracker
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Rode o projeto:
+
+```bash
+ng serve --open
+```
+
+O app abrirá em: `http://localhost:4200/`
+
+## Scripts Disponíveis
+
+- **Iniciar o projeto:**  
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Build de produção:**  
+```bash
+ng build
+```
+
+> ⚠️ Não há testes unitários
+
+## Deploy na Vercel
+
+Deploy ativo conectado à branch `main`.  
+Cada push atualiza automaticamente o deploy.
+
+🔗 **Produção:**  
+[https://angular-cripto-tracker.vercel.app/](https://angular-cripto-tracker.vercel.app/)
+
+## Estrutura do Projeto
+
+```
+src/
+ ┣ app/
+ ┃ ┣ components/
+ ┃ ┃ ┗ stepper/
+ ┃ ┣ models/
+ ┃ ┣ pages/
+ ┃ ┃ ┣ investment-list/
+ ┃ ┃ ┣ purchase-date/
+ ┃ ┃ ┣ purchase-value/
+ ┃ ┃ ┗ results/
+ ┃ ┣ services/
+ ┃ ┣ app.config.ts
+ ┃ ┣ app.html
+ ┃ ┣ app.routes.ts
+ ┃ ┣ app.scss
+ ┃ ┗ app.ts
+ ┣ assets/
+ ┣ _theme-colors.scss
+ ┣ index.html
+ ┗ main.ts
+```
 
 ## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Angular CLI inclui ferramentas poderosas para scaffolding de código. Para gerar um novo componente:
 
 ```bash
-ng generate component component-name
+ng generate component nome-do-componente
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Para uma lista completa de schematics disponíveis (componentes, diretivas ou pipes):
 
 ```bash
 ng generate --help
@@ -28,32 +116,29 @@ ng generate --help
 
 ## Building
 
-To build the project run:
+Para construir o projeto para produção:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Isso compilará o projeto e armazenará os artefatos de build em `dist/`. Por padrão, o build de produção otimiza a aplicação para desempenho e velocidade.
 
 ## Running unit tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
+Não há testes unitários configurados neste projeto.
 
 ## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
+Para testes end-to-end (e2e):
 
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Angular CLI não vem com um framework e2e por padrão. Escolha um que se adeque às suas necessidades, se necessário.
 
-## Additional Resources
+## Autor
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Khalyl Rocha**  
+🔗 GitHub: [https://github.com/kkhalyl](https://github.com/kkhalyl)
