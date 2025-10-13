@@ -65,8 +65,6 @@ ng serve
 ng build
 ```
 
-> ⚠️ Não há testes unitários
-
 ## Deploy na Vercel
 
 Deploy ativo conectado à branch `main`.  
